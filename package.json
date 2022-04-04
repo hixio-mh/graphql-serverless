@@ -11,7 +11,9 @@
     "push": "git push --follow-tags origin master && npm publish",
     "rls": "standard-version --release-as",
     "test": "mocha",
-    "v": "node -e \"console.log(require('./package.json').version)\""
+    "v": "node -e \"console.log(require('./package.json').version)\"",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,8 @@
     "raw-body": "^2.2.0",
     "react": "^16.2.0",
     "subscriptions-transport-ws": "^0.9.6",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "chai": "^4.1.0",
@@ -51,5 +54,6 @@
     "node-mocks-http": "^1.6.4",
     "standard-version": "^8.0.2",
     "webfunc": "^0.13.0-alpha.2"
-  }
+  },
+  "snyk": true
 }
